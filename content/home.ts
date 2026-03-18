@@ -164,118 +164,117 @@ export type HomeContent = {
 export const defaultHomeContent: HomeContent = {
   // ── Hero ─────────────────────────────────────────────────────────────────
   hero: {
-    badgeInner: "Launch",
-    badgeOuter: "Panda SaaS starter is ready",
-    titleBefore: "Build your next",
-    titleHighlight: "SaaS",
-    titleAfter: "app in days, not weeks",
+    badgeInner: "New",
+    badgeOuter: "Welcome to StreamNest",
+    titleBefore: "Stream the best of",
+    titleHighlight: "TV & Movies",
+    titleAfter: "on any device.",
     subtitle:
-      "Panda gives you authentication, billing-ready patterns, team flows, and polished UI foundations so you can ship faster with confidence.",
-    primaryCta: { label: "Start Building", href: "#pricing" },
-    secondaryCta: { label: "Explore features", href: "#features" },
+      "Unlimited shows, movies, originals, and more—personalized for you. Build your own streaming experience with StreamNest.",
+    primaryCta: { label: "Start Watching", href: "/auth#signup" },
+    secondaryCta: { label: "Explore Catalog", href: "#features" },
     heroImageLight: "/hero-image-light.jpeg",
     heroImageDark: "/hero-image-dark.jpeg",
-    heroImageAlt: "Panda dashboard preview",
+    heroImageAlt: "StreamNest streaming preview",
   },
 
   // ── Sponsors ─────────────────────────────────────────────────────────────
   sponsors: {
-    heading: "Built with trusted tools",
+    heading: "Powered by cutting-edge tech",
     items: [
       { icon: "Crown", name: "Vercel" },
-      { icon: "Vegan", name: "Stripe" },
       { icon: "Ghost", name: "OpenAI" },
-      { icon: "Puzzle", name: "Supabase" },
-      { icon: "Squirrel", name: "Clerk" },
-      { icon: "Cookie", name: "Resend" },
       { icon: "Drama", name: "Sentry" },
+      { icon: "Vegan", name: "Stripe" },
+      { icon: "Puzzle", name: "Supabase" },
+      { icon: "Cookie", name: "Resend" },
+      { icon: "Squirrel", name: "Railway" },
     ],
   },
 
   // ── Benefits ─────────────────────────────────────────────────────────────
   benefits: {
-    eyebrow: "Why Panda",
-    heading: "A practical SaaS app builder starter",
+    eyebrow: "Why StreamNest",
+    heading: "A complete streaming platform starter",
     description:
-      "Built for teams that want production-ready foundations with room to customize, not a rigid template you outgrow in a week.",
+      "Built for streaming startups and studios that want a Netflix-quality app with production-grade code and total control.",
     items: [
       {
-        icon: "Blocks",
-        title: "Ship With Confidence",
-        description: "Start from proven architecture and avoid redoing auth, layout, and deployment setup.",
+        icon: "PlaySquare",
+        title: "Your Own Netflix",
+        description: "Launch with user auth, personalized content, watchlists, and save months of engineering.",
       },
       {
-        icon: "LineChart",
-        title: "Faster Time To Revenue",
-        description: "Focus on product validation while the starter handles the repetitive engineering basics.",
+        icon: "MonitorPlay",
+        title: "Seamless Playback",
+        description: "Lightning-fast streaming with modern UI patterns that users already love.",
       },
       {
-        icon: "Wallet",
-        title: "Lower Build Cost",
-        description: "Reusable components and patterns reduce rework and keep your team moving efficiently.",
+        icon: "UserCheck",
+        title: "Multi-Profile & Parental Controls",
+        description: "Let your family, friends, or housemates stream on custom profiles. Block content with parental controls.",
       },
       {
         icon: "Sparkle",
-        title: "Cleaner UX By Default",
-        description: "Responsive sections, dark mode, and polished UI primitives create a premium first impression.",
+        title: "Beautiful Everywhere",
+        description: "Responsive on any device with polished cards, slick tile grids, and cinematic layouts. Dark mode included.",
       },
     ],
   },
 
   // ── Features ─────────────────────────────────────────────────────────────
   features: {
-    eyebrow: "Features",
-    heading: "What you get out of the box",
+    eyebrow: "Platform Features",
+    heading: "Everything you need for streaming",
     subtitle:
-      "Panda combines developer speed and production-grade UX so you can spend your time shipping features instead of rebuilding starter infrastructure.",
+      "StreamNest is equipped for on-demand video, catalog browsing, and user-driven features—ready for your content library.",
     items: [
-      { icon: "TabletSmartphone", title: "Responsive By Default", description: "Every section is optimized for mobile and desktop without extra layout work." },
-      { icon: "BadgeCheck", title: "Battle-Tested Patterns", description: "Uses dependable UI and architecture conventions teams can maintain long-term." },
-      { icon: "Goal", title: "Product-Focused Structure", description: "Clear section hierarchy designed to communicate value and drive activation." },
-      { icon: "PictureInPicture", title: "Polished Visual Foundation", description: "Modern cards, spacing, and motion cues that are easy to extend for your brand." },
-      { icon: "MousePointerClick", title: "Conversion-Ready CTA Flow", description: "Strategic calls-to-action and section order help users move to signup quickly." },
-      { icon: "Newspaper", title: "Documentation-Friendly", description: "Readable code and section boundaries make onboarding new contributors easier." },
+      { icon: "Video", title: "HD & 4K Streaming", description: "Crystal-clear playback with adaptive quality." },
+      { icon: "ListVideo", title: "My List", description: "Easily save movies and shows for later." },
+      { icon: "Users", title: "Multiple Profiles", description: "Everyone gets recommendations and history tailored for them." },
+      { icon: "Play", title: "Continue Watching", description: "Pick up where you left off, across any device." },
+      { icon: "KeySquare", title: "Secure Auth", description: "Email/password login, password resets, and robust account controls." },
+      { icon: "Heart", title: "Personalized Recommendations", description: "Algorithms highlight trending picks just for you." },
     ],
   },
 
   // ── Services ─────────────────────────────────────────────────────────────
   services: {
-    eyebrow: "Services",
-    heading: "Core starter capabilities",
+    eyebrow: "Streaming Core",
+    heading: "What's built-in with StreamNest",
     subtitle:
-      "A pragmatic baseline for SaaS products that need to move quickly without sacrificing quality.",
+      "A fast, pragmatic baseline to demo, ship, or scale your streaming startup.",
     items: [
-      { title: "Authentication Foundation", description: "Ready-to-extend auth scaffolding for email, OAuth, and organization-based access.", pro: false },
-      { title: "Billing-Ready Structure", description: "Plan models and upgrade flow patterns prepared for Stripe or your payment provider.", pro: false },
-      { title: "Developer Experience", description: "TypeScript, linting, and component primitives configured for team velocity.", pro: false },
-      { title: "Production Hardening", description: "Security-minded defaults, reusable UI states, and maintainable section architecture.", pro: true },
+      { title: "User Profiles", description: "Separate preferences, lists, and playback for each household member.", pro: false },
+      { title: "Saved & Favorites", description: "Users can bookmark content, rate movies, and manage collections.", pro: false },
+      { title: "Watch History & Resume", description: "Never lose your spot. Resume on any device.", pro: false },
+      { title: "Streaming-Ready Stack", description: "Next.js, Drizzle ORM, PostgreSQL, and polished UI patterns.", pro: true },
     ],
   },
 
   // ── Testimonials ─────────────────────────────────────────────────────────
   testimonials: {
-    eyebrow: "Testimonials",
-    heading: "Teams shipping with Panda",
+    eyebrow: "What Our Early Users Say",
+    heading: "Audience streaming with StreamNest",
     reviews: [
-      { image: "/demo-img.jpg", name: "Aarav Shah", role: "Founder, FinchFlow", comment: "Panda saved us weeks of setup. We launched our first paying plan in less than a sprint.", rating: 5.0 },
-      { image: "/demo-img.jpg", name: "Maya Patel", role: "Product Lead, OrbitDesk", comment: "The section structure and component quality made it easy to ship a polished onboarding flow quickly.", rating: 4.8 },
-      { image: "/demo-img.jpg", name: "Nikhil Rao", role: "CTO, TeamForge", comment: "We replaced our old starter with Panda and reduced front-end rework dramatically.", rating: 4.9 },
-      { image: "/demo-img.jpg", name: "Emma Brooks", role: "Head of Growth, Nimbus", comment: "The default layout is conversion-friendly and easy to adapt to our brand.", rating: 5.0 },
-      { image: "/demo-img.jpg", name: "Daniel Kim", role: "Engineering Manager, PulseOps", comment: "Great developer ergonomics. New engineers onboarded fast and started shipping immediately.", rating: 5.0 },
-      { image: "/demo-img.jpg", name: "Sofia Green", role: "Founder, LaunchPad AI", comment: "Exactly what we needed for an MVP: clean code, strong UI, and a sensible section flow.", rating: 4.9 },
+      { image: "/demo-img.jpg", name: "Aarav Shah", role: "Founder, IndieFlicks", comment: "StreamNest let us launch our indie service in days. The landing and dashboard feel world-class.", rating: 5.0 },
+      { image: "/demo-img.jpg", name: "Maya Patel", role: "Product Lead, FramePlay", comment: "Onboarding and account flows saved us months. Our team could focus on content, not plumbing!", rating: 4.9 },
+      { image: "/demo-img.jpg", name: "Daniel Kim", role: "CTO, WatchZone", comment: "Getting started was almost too easy. The Netflix feel is there, but the code is ours.", rating: 4.8 },
+      { image: "/demo-img.jpg", name: "Emma Brooks", role: "Growth Lead, Kinetix Movies", comment: "We used StreamNest as a base and our churn went DOWN on launch. Users love the playback UX.", rating: 5.0 },
+      { image: "/demo-img.jpg", name: "Nikhil Rao", role: "Engineer, ClipHouse", comment: "Docs were clear, features worked, and feedback cycle was fast. Highly recommend.", rating: 4.9 },
     ],
   },
 
   // ── Team ─────────────────────────────────────────────────────────────────
   team: {
-    eyebrow: "Team",
-    heading: "Meet the Panda team",
+    eyebrow: "The Creators",
+    heading: "Built for streamers, by streamers",
     members: [
       {
         imageUrl: "/team1.jpg",
-        firstName: "Leo",
-        lastName: "Miranda",
-        positions: ["Lead Engineer", "Starter Architecture"],
+        firstName: "Chirag",
+        lastName: "Dodiya",
+        positions: ["Founder", "Lead Engineer"],
         socialNetworks: [
           { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
           { name: "Github", url: "https://github.com/leoMirandaa" },
@@ -296,7 +295,7 @@ export const defaultHomeContent: HomeContent = {
         imageUrl: "/team3.jpg",
         firstName: "David",
         lastName: "Diaz",
-        positions: ["Platform Engineer", "AI Integrations"],
+        positions: ["Platform Engineer", "Streaming Services"],
         socialNetworks: [
           { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
           { name: "Github", url: "https://github.com/leoMirandaa" },
@@ -306,7 +305,7 @@ export const defaultHomeContent: HomeContent = {
         imageUrl: "/team1.jpg",
         firstName: "Sarah",
         lastName: "Robinson",
-        positions: ["Cloud Engineer", "Kubernetes"],
+        positions: ["Cloud Engineer", "Media Pipelines"],
         socialNetworks: [
           { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
           { name: "Github", url: "https://github.com/leoMirandaa" },
@@ -347,7 +346,7 @@ export const defaultHomeContent: HomeContent = {
         imageUrl: "/team2.jpg",
         firstName: "Pam",
         lastName: "Taylor",
-        positions: ["Fullstack Engineer", "Product UX"],
+        positions: ["Fullstack Engineer", "UX & Playback"],
         socialNetworks: [
           { name: "X", url: "https://x.com/leo_mirand4" },
         ],
@@ -357,34 +356,34 @@ export const defaultHomeContent: HomeContent = {
 
   // ── Pricing ──────────────────────────────────────────────────────────────
   pricing: {
-    eyebrow: "Pricing",
-    heading: "Pricing for every stage",
-    subtitle: "Start lean, then scale to enterprise-grade workflows as your product grows.",
+    eyebrow: "Plans",
+    heading: "Flexible pricing for every streamer",
+    subtitle: "Try StreamNest for free or unlock the full power of your own branded streaming app.",
     priceSuffix: "/month",
     plans: [
       {
-        title: "Starter",
+        title: "Basic",
         popular: false,
         price: 0,
-        description: "Ideal for prototypes and small internal tools.",
+        description: "Perfect for demos, prototypes, and side projects.",
         buttonText: "Start for free",
-        benefits: ["Up to 3 teammates", "Basic auth patterns", "Core landing sections", "Community support", "Deploy-ready setup"],
+        benefits: ["1 user profile", "Stream up to 10 hours", "Demo catalog", "Landing & dashboard", "Community support"],
       },
       {
-        title: "Growth",
+        title: "Pro",
         popular: true,
-        price: 49,
-        description: "Best for product teams shipping customer-facing SaaS.",
+        price: 29,
+        description: "Best for content startups and new streaming brands.",
         buttonText: "Start trial",
-        benefits: ["Unlimited teammates", "Advanced section set", "Billing-ready models", "Priority support", "Team workflows"],
+        benefits: ["Unlimited profiles", "Full catalog integration", "Favorites & recommendations", "Playback analytics", "Priority support"],
       },
       {
-        title: "Enterprise",
+        title: "Studio",
         popular: false,
-        price: 199,
-        description: "For teams requiring compliance, support SLAs, and custom rollout.",
-        buttonText: "Contact sales",
-        benefits: ["Security review support", "SSO/SAML integration path", "Dedicated onboarding", "Phone and email support", "Architecture advisory"],
+        price: 129,
+        description: "For established studios with custom needs.",
+        buttonText: "Contact us",
+        benefits: ["SSO/SAML", "Team management", "Advanced analytics", "Dedicated engineer hours", "Custom features"],
       },
     ],
   },
@@ -392,44 +391,44 @@ export const defaultHomeContent: HomeContent = {
   // ── Contact ──────────────────────────────────────────────────────────────
   contact: {
     eyebrow: "Contact",
-    heading: "Talk to the Panda team",
+    heading: "Talk to the StreamNest team",
     description:
-      "Need help customizing the starter, planning architecture, or accelerating launch? Share your goals and timeline.",
-    mailtoAddress: "hello@panda.dev",
+      "Need advice, help customizing, or a quote for your own streaming vision? We’re here for you.",
+    mailtoAddress: "chirag@bidx.ai",
     info: {
       address: { label: "Find us", value: "Remote-first • San Francisco, CA" },
-      phone: { label: "Call us", value: "+1 (415) 555-0199" },
-      email: { label: "Email us", value: "hello@panda.dev" },
-      hours: { label: "Visit us", value: ["Monday - Friday", "9AM - 6PM PT"] },
+      phone: { label: "Call us", value: "" },
+      email: { label: "Email us", value: "chirag@bidx.ai" },
+      hours: { label: "Hours", value: ["Monday - Friday", "9AM - 6PM PT"] },
     },
-    formSubjects: ["Starter Demo", "Architecture Review", "Design System", "Billing Integration", "Enterprise Plan"],
+    formSubjects: ["Demo Request", "Feature Inquiry", "Design Review", "Studio Plan", "Custom Integration"],
     formSubmitLabel: "Send inquiry",
   },
 
   // ── FAQ ──────────────────────────────────────────────────────────────────
   faq: {
     eyebrow: "FAQ",
-    heading: "Common Questions",
+    heading: "Frequently Asked Questions",
     items: [
-      { question: "Is Panda free to start with?", answer: "Yes. You can start with the core template and customize it for your product." },
-      { question: "Can I use this for a production SaaS app?", answer: "Yes. The starter is designed for production-minded teams with scalable structure and reusable UI patterns." },
-      { question: "Does it support dark mode and responsive design?", answer: "Yes. The template includes theme support and responsive layouts across major sections." },
-      { question: "Can I plug in my own auth and billing provider?", answer: "Yes. The structure is provider-agnostic and easy to adapt for your stack." },
-      { question: "How quickly can I launch with Panda?", answer: "Most teams can ship an MVP in days by reusing existing sections and starter patterns." },
+      { question: "Can I use StreamNest for my own Netflix clone?", answer: "Yes! StreamNest is designed as a foundation for personal and commercial streaming platforms." },
+      { question: "Is there a database or backend included?", answer: "Yes. Drizzle ORM and PostgreSQL are included with production patterns and migrations." },
+      { question: "Does the template handle authentication and account management?", answer: "Yes. Email/password auth, sign up, password reset, and admin-ready controls are included." },
+      { question: "How customizable is the UI/branding?", answer: "StreamNest is fully open-source—branding, layouts, and components are easy to adapt for your needs." },
+      { question: "How do I get started?", answer: "Sign up, explore the dashboard, and begin adding your own video catalog and user flows." },
     ],
   },
 
   // ── Footer ───────────────────────────────────────────────────────────────
   footer: {
-    brandName: "Panda",
+    brandName: "StreamNest",
     columns: [
       {
         heading: "Contact",
         links: [
-          { label: "hello@panda.dev", href: "mailto:hello@panda.dev" },
+          { label: "chirag@bidx.ai", href: "mailto:chirag@bidx.ai" },
           { label: "Github", href: "#" },
-          { label: "Twitter", href: "https://x.com" },
           { label: "Discord", href: "https://discord.com" },
+          { label: "Twitter", href: "https://x.com" },
         ],
       },
       {
@@ -457,13 +456,13 @@ export const defaultHomeContent: HomeContent = {
         ],
       },
     ],
-    copyright: "\u00a9 2026 Panda SaaS App Builder Starter.",
+    copyright: "\u00a9 2026 StreamNest. All rights reserved.",
     attribution: { label: "Built on Next.js", href: "https://nextjs.org" },
   },
 
   // ── Navbar ───────────────────────────────────────────────────────────────
   navbar: {
-    brandName: "Panda",
+    brandName: "StreamNest",
     routes: [
       { href: "/#testimonials", label: "Testimonials" },
       { href: "/#team", label: "Team" },
@@ -471,16 +470,16 @@ export const defaultHomeContent: HomeContent = {
       { href: "/#faq", label: "FAQ" },
     ],
     featureDropdownLabel: "Features",
-    featureImage: { src: "/demo-img.jpg", alt: "Panda preview" },
+    featureImage: { src: "/demo-img.jpg", alt: "StreamNest preview" },
     features: [
-      { title: "Auth, Billing, Teams", description: "Production-ready flows for sign-in, subscriptions, and organizations." },
-      { title: "UI + Design System", description: "Shadcn-based components with consistent theming and dark mode support." },
-      { title: "Deploy Fast", description: "Sane defaults for Next.js, TypeScript, and Vercel-first deployment." },
+      { title: "User Profiles", description: "Create multiple profiles for your household or team." },
+      { title: "Favorites & Recommendations", description: "AI-powered personalization and classic watchlists." },
+      { title: "Live & On Demand", description: "Stream anywhere, any time—your way." },
     ],
     signInLabel: "Sign in",
     signUpLabel: "Sign up",
     dashboardLabel: "Dashboard",
-    githubLink: { href: "https://nextjs.org/docs", ariaLabel: "View on GitHub" },
+    githubLink: { href: "https://github.com", ariaLabel: "View on GitHub" },
   },
 };
 
