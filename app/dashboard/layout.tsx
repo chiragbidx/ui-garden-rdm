@@ -9,6 +9,7 @@ import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { getAuthSession } from "@/lib/auth/session";
 import { db } from "@/lib/db/client";
 import { users } from "@/lib/db/schema";
+import { getHomeContent } from "@/content/home";
 
 export default async function DashboardLayout({
   children,
@@ -34,6 +35,7 @@ export default async function DashboardLayout({
     redirect("/auth#signin");
   }
 
+  const { navbar } = getHomeContent();
   const fullName = `${user.firstName} ${user.lastName}`.trim();
   const initials =
     `${user.firstName[0] ?? ""}${user.lastName[0] ?? ""}`.toUpperCase() || "U";
@@ -46,10 +48,10 @@ export default async function DashboardLayout({
           <div className="p-5">
             <div className="flex items-center gap-2.5">
               <div className="grid size-8 place-items-center rounded-lg bg-foreground text-background text-sm font-bold shadow-sm">
-                P
+                SN
               </div>
               {/* Dashboard Text Logo */}
-              <span className="font-semibold tracking-tight">Panda</span>
+              <span className="font-semibold tracking-tight">{navbar.brandName}</span>
             </div>
           </div>
 
