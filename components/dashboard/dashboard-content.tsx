@@ -15,6 +15,9 @@ import {
   TrendingUp,
   Users,
   Zap,
+  Play,
+  ListVideo,
+  Heart
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -60,83 +63,83 @@ type ActivityItem = {
   icon: React.ComponentType<{ className?: string }>;
 };
 
-type MockProject = {
+type MockMovie = {
   id: string;
-  name: string;
-  owner: string;
+  title: string;
+  genre: string;
   status: string;
 };
 
 const metrics: Metric[] = [
-  { label: "Total Users", value: "2,847", trend: "+12.4%", icon: Users, description: "vs last month" },
-  { label: "Active Projects", value: "184", trend: "+6.1%", icon: FolderKanban, description: "vs last month" },
-  { label: "Revenue", value: "$48,290", trend: "+18.2%", icon: DollarSign, description: "vs last month" },
-  { label: "Growth Rate", value: "24.5%", trend: "+3.1%", icon: TrendingUp, description: "vs last month" },
+  { label: "Total Streams", value: "14,820", trend: "+9.1%", icon: Play, description: "vs last month" },
+  { label: "My List", value: "18", trend: "+3 new", icon: ListVideo, description: "shows & movies" },
+  { label: "Favorites", value: "7", trend: "+1 new", icon: Heart, description: "favorite movies" },
+  { label: "Active Profiles", value: "3", trend: "No change", icon: Users, description: "in your household" },
 ];
 
 const onboardingSteps: OnboardingStep[] = [
-  { title: "Complete your profile", description: "Add your name and contact details.", href: "/dashboard/settings", done: false },
-  { title: "Invite team members", description: "Collaborate by sending invitations.", href: "/dashboard/team", done: false },
-  { title: "Connect an integration", description: "Link external tools and services.", href: "#", done: false },
-  { title: "Set up billing", description: "Add a payment method for premium.", href: "#", done: false },
+  { title: "Create a Profile", description: "Set up different users for your family.", href: "/dashboard/settings", done: false },
+  { title: "Add to My List", description: "Bookmark shows or movies to watch later.", href: "/dashboard/feature", done: false },
+  { title: "Invite a Friend", description: "Share StreamNest with your friends.", href: "/dashboard/team", done: false },
+  { title: "Explore Catalog", description: "Browse trending titles and new releases.", href: "#features", done: false },
 ];
 
 const recentActivity: ActivityItem[] = [
-  { title: "New user signup", detail: "sarah@acme.dev created an account", time: "2 min ago", icon: Users },
-  { title: "Plan upgraded", detail: "starter@pulsehq.com moved to Pro", time: "28 min ago", icon: Zap },
-  { title: "Invoice paid", detail: "INV-2487 was paid — $299.00", time: "1 hr ago", icon: DollarSign },
-  { title: "Team invited", detail: "3 users invited to workspace", time: "3 hr ago", icon: Users },
-  { title: "Project created", detail: "New project 'Q2 Campaign'", time: "5 hr ago", icon: FolderKanban },
+  { title: "Added to My List", detail: "The Grand Show added", time: "Just now", icon: ListVideo },
+  { title: "Stream finished", detail: "Watched 'City Nights'", time: "8 min ago", icon: Play },
+  { title: "New favorite", detail: "'Rising Stars' marked as favorite", time: "20 min ago", icon: Heart },
+  { title: "Profile created", detail: "Jamie added a new profile", time: "1 hr ago", icon: Users },
+  { title: "Achievement", detail: "Watched 10 movies in a week", time: "Yesterday", icon: Zap },
 ];
 
 const quickActions = [
-  { label: "Invite a member", href: "/dashboard/team", icon: Users },
+  { label: "Add to My List", href: "/dashboard/feature", icon: ListVideo },
   { label: "Account settings", href: "/dashboard/settings", icon: Activity },
-  { label: "View activity", href: "#", icon: Bell },
+  { label: "Share StreamNest", href: "/dashboard/team", icon: Users },
 ];
 
 const weeklyData = [
-  { day: "Mon", users: 42, revenue: 320 },
-  { day: "Tue", users: 58, revenue: 480 },
-  { day: "Wed", users: 35, revenue: 290 },
-  { day: "Thu", users: 72, revenue: 610 },
-  { day: "Fri", users: 63, revenue: 520 },
-  { day: "Sat", users: 28, revenue: 180 },
-  { day: "Sun", users: 18, revenue: 140 },
+  { day: "Mon", streams: 82 },
+  { day: "Tue", streams: 105 },
+  { day: "Wed", streams: 97 },
+  { day: "Thu", streams: 124 },
+  { day: "Fri", streams: 132 },
+  { day: "Sat", streams: 112 },
+  { day: "Sun", streams: 68 },
 ];
 
-const monthlyRevenue = [
-  { month: "Jan", value: 12400 },
-  { month: "Feb", value: 15800 },
-  { month: "Mar", value: 14200 },
-  { month: "Apr", value: 18600 },
-  { month: "May", value: 22100 },
-  { month: "Jun", value: 19800 },
-  { month: "Jul", value: 24500 },
-  { month: "Aug", value: 28300 },
-  { month: "Sep", value: 26100 },
-  { month: "Oct", value: 31200 },
-  { month: "Nov", value: 35800 },
-  { month: "Dec", value: 48290 },
+const monthlyStreams = [
+  { month: "Jan", value: 4820 },
+  { month: "Feb", value: 6880 },
+  { month: "Mar", value: 7350 },
+  { month: "Apr", value: 8120 },
+  { month: "May", value: 9220 },
+  { month: "Jun", value: 10510 },
+  { month: "Jul", value: 12850 },
+  { month: "Aug", value: 14210 },
+  { month: "Sep", value: 13180 },
+  { month: "Oct", value: 13800 },
+  { month: "Nov", value: 15420 },
+  { month: "Dec", value: 14820 },
 ];
 
-const initialMockProjects: MockProject[] = [
-  { id: "p-1", name: "Landing Refresh", owner: "Ava", status: "Draft" },
-  { id: "p-2", name: "Onboarding Flow", owner: "Liam", status: "In Review" },
-  { id: "p-3", name: "Usage Dashboard", owner: "Noah", status: "Published" },
+const initialMockMovies: MockMovie[] = [
+  { id: "m-1", title: "City Nights", genre: "Drama", status: "To Watch" },
+  { id: "m-2", title: "Rising Stars", genre: "Family", status: "In Progress" },
+  { id: "m-3", title: "The Grand Show", genre: "Action", status: "Watched" },
 ];
 
 function BarChart({ data }: { data: typeof weeklyData }) {
-  const maxUsers = Math.max(...data.map((d) => d.users));
+  const maxStreams = Math.max(...data.map((d) => d.streams));
 
   return (
     <div className="space-y-2">
       <div className="flex items-end gap-1.5 h-[140px]">
         {data.map((d) => {
-          const height = (d.users / maxUsers) * 100;
+          const height = (d.streams / maxStreams) * 100;
           return (
             <div key={d.day} className="flex-1 flex flex-col items-center gap-1">
-              <span className="text-[10px] text-muted-foreground font-medium">{d.users}</span>
+              <span className="text-[10px] text-muted-foreground font-medium">{d.streams}</span>
               <div
                 className="w-full rounded-t-md bg-primary/80 transition-all hover:bg-primary min-h-[4px]"
                 style={{ height: `${height}%` }}
@@ -156,7 +159,7 @@ function BarChart({ data }: { data: typeof weeklyData }) {
   );
 }
 
-function AreaChart({ data }: { data: typeof monthlyRevenue }) {
+function AreaChart({ data }: { data: typeof monthlyStreams }) {
   const maxVal = Math.max(...data.map((d) => d.value));
   const minVal = Math.min(...data.map((d) => d.value)) * 0.8;
   const range = maxVal - minVal;
@@ -203,9 +206,9 @@ function matchesQuery(query: string, ...fields: string[]): boolean {
 
 export function DashboardContent({ greeting, firstName }: { greeting: string; firstName: string }) {
   const [query, setQuery] = useState("");
-  const [projects, setProjects] = useState<MockProject[]>(initialMockProjects);
+  const [movies, setMovies] = useState<MockMovie[]>(initialMockMovies);
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [editingProject, setEditingProject] = useState<MockProject | null>(null);
+  const [editingMovie, setEditingMovie] = useState<MockMovie | null>(null);
 
   const filteredMetrics = useMemo(
     () => (query ? metrics.filter((m) => matchesQuery(query, m.label, m.value, m.description)) : metrics),
@@ -224,41 +227,41 @@ export function DashboardContent({ greeting, firstName }: { greeting: string; fi
 
   const showMetrics = filteredMetrics.length > 0;
   const showOnboarding = filteredSteps.length > 0;
-  const showCharts = !query || matchesQuery(query, "performance", "chart", "graph", "revenue", "engagement", "weekly", "monthly");
+  const showCharts = !query || matchesQuery(query, "performance", "chart", "graph", "streams", "engagement", "weekly", "monthly");
   const showActivity = filteredActivity.length > 0;
   const showCrudExample =
-    !query || matchesQuery(query, "crud", "dialog", "modal", "project", "create", "edit");
+    !query || matchesQuery(query, "crud", "dialog", "modal", "movie", "add", "edit", "list", "my list");
   const noResults = !showMetrics && !showOnboarding && !showCharts && !showActivity && !showCrudExample;
 
   function openCreateDialog() {
-    setEditingProject(null);
+    setEditingMovie(null);
     setDialogOpen(true);
   }
 
-  function openEditDialog(project: MockProject) {
-    setEditingProject(project);
+  function openEditDialog(movie: MockMovie) {
+    setEditingMovie(movie);
     setDialogOpen(true);
   }
 
-  function handleSaveProject(event: FormEvent<HTMLFormElement>) {
+  function handleSaveMovie(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const name = String(formData.get("name") ?? "").trim();
-    const owner = String(formData.get("owner") ?? "").trim();
+    const title = String(formData.get("title") ?? "").trim();
+    const genre = String(formData.get("genre") ?? "").trim();
     const status = String(formData.get("status") ?? "").trim();
 
-    if (!name || !owner || !status) return;
+    if (!title || !genre || !status) return;
 
-    if (editingProject) {
-      setProjects((prev) =>
-        prev.map((project) =>
-          project.id === editingProject.id
-            ? { ...project, name, owner, status }
-            : project
+    if (editingMovie) {
+      setMovies((prev) =>
+        prev.map((movie) =>
+          movie.id === editingMovie.id
+            ? { ...movie, title, genre, status }
+            : movie
         )
       );
     } else {
-      setProjects((prev) => [{ id: `p-${Date.now()}`, name, owner, status }, ...prev]);
+      setMovies((prev) => [{ id: `m-${Date.now()}`, title, genre, status }, ...prev]);
     }
 
     setDialogOpen(false);
@@ -274,7 +277,7 @@ export function DashboardContent({ greeting, firstName }: { greeting: string; fi
               {greeting}, {firstName}
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              Here&apos;s what&apos;s happening across your workspace today.
+              Your personalized StreamNest dashboard—see your latest activity and manage your lists.
             </p>
           </div>
           <div className="flex items-center gap-2">
@@ -365,7 +368,7 @@ export function DashboardContent({ greeting, firstName }: { greeting: string; fi
                     0 / {onboardingSteps.length}
                   </Badge>
                 </div>
-                <CardDescription>Complete these steps to set up your workspace.</CardDescription>
+                <CardDescription>Set up your profiles and lists for a tailored experience.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-1">
                 {filteredSteps.map((step) => (
@@ -395,11 +398,11 @@ export function DashboardContent({ greeting, firstName }: { greeting: string; fi
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <div>
-                    <CardTitle className="text-base">Weekly Signups</CardTitle>
-                    <CardDescription>New user registrations this week</CardDescription>
+                    <CardTitle className="text-base">Weekly Streams</CardTitle>
+                    <CardDescription>Total streams this week</CardDescription>
                   </div>
                   <Badge variant="outline" className="text-xs font-medium">
-                    316 total
+                    720 total
                   </Badge>
                 </div>
               </CardHeader>
@@ -411,24 +414,24 @@ export function DashboardContent({ greeting, firstName }: { greeting: string; fi
         </div>
       )}
 
-      {/* Revenue chart */}
+      {/* Streams chart */}
       {showCharts && (
         <div className="mb-8">
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
-                  <CardTitle className="text-base">Revenue Overview</CardTitle>
-                  <CardDescription>Monthly revenue for the current year</CardDescription>
+                  <CardTitle className="text-base">Streams Overview</CardTitle>
+                  <CardDescription>Monthly streams for the current year</CardDescription>
                 </div>
                 <div className="text-right">
-                  <p className="text-lg font-bold tracking-tight">$48,290</p>
-                  <p className="text-xs text-emerald-600 dark:text-emerald-400 font-medium">+18.2% from last month</p>
+                  <p className="text-lg font-bold tracking-tight">14,820</p>
+                  <p className="text-xs text-emerald-600 dark:text-emerald-400 font-medium">+9.1% from last month</p>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <AreaChart data={monthlyRevenue} />
+              <AreaChart data={monthlyStreams} />
             </CardContent>
           </Card>
         </div>
@@ -440,33 +443,33 @@ export function DashboardContent({ greeting, firstName }: { greeting: string; fi
             <CardHeader>
               <div className="flex items-center justify-between gap-3">
                 <div>
-                  <CardTitle className="text-base">Projects</CardTitle>
+                  <CardTitle className="text-base">My List</CardTitle>
                   <CardDescription>
-                    Create and update your projects
+                    Add and update your saved movies or shows
                   </CardDescription>
                 </div>
                 <Button size="sm" onClick={openCreateDialog}>
-                  Create project
+                  Add title
                 </Button>
               </div>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                {projects.map((project) => (
+                {movies.map((movie) => (
                   <div
-                    key={project.id}
+                    key={movie.id}
                     className="flex items-center justify-between rounded-md border border-border/70 p-3"
                   >
                     <div className="min-w-0">
-                      <p className="text-sm font-medium">{project.name}</p>
+                      <p className="text-sm font-medium">{movie.title}</p>
                       <p className="text-xs text-muted-foreground">
-                        Owner: {project.owner} • Status: {project.status}
+                        Genre: {movie.genre} • Status: {movie.status}
                       </p>
                     </div>
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => openEditDialog(project)}
+                      onClick={() => openEditDialog(movie)}
                     >
                       Edit
                     </Button>
@@ -480,41 +483,41 @@ export function DashboardContent({ greeting, firstName }: { greeting: string; fi
             <DialogContent>
               <DialogHeader>
                 <DialogTitle>
-                  {editingProject ? "Edit project" : "Create project"}
+                  {editingMovie ? "Edit title" : "Add title"}
                 </DialogTitle>
                 <DialogDescription>
                   This is mock data in local component state. No backend call is made.
                 </DialogDescription>
               </DialogHeader>
 
-              <form onSubmit={handleSaveProject} className="space-y-4">
+              <form onSubmit={handleSaveMovie} className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="project-name">Project name</Label>
+                  <Label htmlFor="movie-title">Title</Label>
                   <Input
-                    id="project-name"
-                    name="name"
-                    defaultValue={editingProject?.name ?? ""}
-                    placeholder="Q2 Campaign"
+                    id="movie-title"
+                    name="title"
+                    defaultValue={editingMovie?.title ?? ""}
+                    placeholder="e.g. The Grand Show"
                     required
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="project-owner">Owner</Label>
+                  <Label htmlFor="movie-genre">Genre</Label>
                   <Input
-                    id="project-owner"
-                    name="owner"
-                    defaultValue={editingProject?.owner ?? ""}
-                    placeholder="Ava"
+                    id="movie-genre"
+                    name="genre"
+                    defaultValue={editingMovie?.genre ?? ""}
+                    placeholder="Drama, Action, Family..."
                     required
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="project-status">Status</Label>
+                  <Label htmlFor="movie-status">Status</Label>
                   <Input
-                    id="project-status"
+                    id="movie-status"
                     name="status"
-                    defaultValue={editingProject?.status ?? "Draft"}
-                    placeholder="Draft"
+                    defaultValue={editingMovie?.status ?? "To Watch"}
+                    placeholder="To Watch, In Progress, Watched"
                     required
                   />
                 </div>
@@ -524,7 +527,7 @@ export function DashboardContent({ greeting, firstName }: { greeting: string; fi
                     Cancel
                   </Button>
                   <Button type="submit">
-                    {editingProject ? "Save changes" : "Create"}
+                    {editingMovie ? "Save changes" : "Add"}
                   </Button>
                 </DialogFooter>
               </form>
@@ -540,7 +543,7 @@ export function DashboardContent({ greeting, firstName }: { greeting: string; fi
             <div className="flex items-center justify-between">
               <div>
                 <CardTitle className="text-base">Recent Activity</CardTitle>
-                <CardDescription>Latest events across your workspace</CardDescription>
+                <CardDescription>Your latest streaming events and milestones</CardDescription>
               </div>
               <Button variant="ghost" size="sm" className="gap-1.5 text-xs" disabled>
                 View all
