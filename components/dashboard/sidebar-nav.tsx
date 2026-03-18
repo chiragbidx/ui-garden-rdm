@@ -10,6 +10,9 @@ import {
   Settings,
   Users,
   CreditCard,
+  Play,
+  Heart,
+  ListVideo
 } from "lucide-react";
 import {
   Collapsible,
@@ -26,14 +29,12 @@ type NavItem = {
 
 const sections: { title: string; items: NavItem[] }[] = [
   {
-    title: "Platform",
+    title: "Streaming",
     items: [
-      { label: "Overview", href: "/dashboard", icon: Home },
-      {
-        label: "Feature",
-        href: "/dashboard/feature",
-        icon: Hammer,
-      },
+      { label: "Home", href: "/dashboard", icon: Home },
+      { label: "My List", href: "/dashboard/feature", icon: ListVideo },
+      { label: "Continue Watching", href: "#", icon: Play, disabled: true },
+      { label: "Favorites", href: "#", icon: Heart, disabled: true },
     ],
   },
   {
